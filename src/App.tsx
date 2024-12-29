@@ -4,6 +4,7 @@ import './App.css'
 
 import { decreament, decreamentByValue, increament } from './redux/feature/CreateSlice';
 import { useAppDispatch, useAppSelector } from './redux/feature/hook.ts/hook';
+import { Button } from './components/ui/button';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -16,7 +17,7 @@ function App() {
     <>
     <div className='mx-auto w-max'>
       <h1 className=' text-5xl my-10 font-bold'>redux revice</h1>
-
+  <Button> my button </Button>
       
     </div>
       <div className="flex justify-center">
