@@ -1,16 +1,17 @@
 import { useState } from 'react'
 
 import './App.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { decreament, increament } from './redux/feature/CreateSlice';
+
+import { decreament, decreamentByValue, increament } from './redux/feature/CreateSlice';
+import { useAppDispatch, useAppSelector } from './redux/feature/hook.ts/hook';
 
 function App() {
   // const [count, setCount] = useState(0)
   const [activeButton, setActiveButton] = useState('button1');
 
 
-   const value = useSelector((state)=>state.counter.value)
-  const dispatch = useDispatch()
+   const value = useAppSelector((state)=>state.counterJahid.value)
+  const dispatch = useAppDispatch()
   return ( 
     <>
     <div className='mx-auto w-max'>
@@ -45,6 +46,15 @@ function App() {
        
       >
         decreament
+      </button>
+      <button
+      onClick={()=>dispatch(decreamentByValue({jahid:5}))}
+        className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-4 ${
+          activeButton === 'button2' ? 'bg-green-700' : ''
+        }`}
+       
+      >
+        decreament by value
       </button>
     </div>
     </>
